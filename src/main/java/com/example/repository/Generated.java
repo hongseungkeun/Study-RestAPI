@@ -1,10 +1,12 @@
 package com.example.repository;
 
-public class Generated {
-    private static Long sequence = 0L;
+import java.util.concurrent.atomic.AtomicLong;
 
-    public static synchronized Long incrementId(){
-        return sequence += 1L;
+public class Generated {
+    private static AtomicLong sequence = new AtomicLong();
+
+    public static Long incrementId(){
+        return sequence.addAndGet(1);
     }
 }
 
