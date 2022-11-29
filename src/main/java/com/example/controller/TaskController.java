@@ -28,7 +28,7 @@ public class TaskController {
 
     @ApiOperation(value = "ToDo 상세 조회하기")
     @GetMapping("/{id}")
-    public ResponseEntity<Task> read(@PathVariable Long id){
+    public ResponseEntity<Task> read(@PathVariable(name = "id") Long id){
         return taskService.readTask(id);
     }
 
@@ -41,13 +41,13 @@ public class TaskController {
 
     @ApiOperation(value = "ToDo 제목 수정하기")
     @RequestMapping(value = "/{id}", method = {RequestMethod.PATCH, RequestMethod.PUT})
-    public ResponseEntity<Task> update(@PathVariable Long id, @RequestBody Task task){
+    public ResponseEntity<Task> update(@PathVariable(name = "id") Long id, @RequestBody Task task){
         return taskService.updateTask(id, task);
     }
 
     @ApiOperation(value = "ToDo 삭제하기")
     @DeleteMapping("/{id}")
-    public ResponseEntity<Task> delete(@PathVariable Long id){
+    public ResponseEntity<Task> delete(@PathVariable(name = "id") Long id){
         return taskService.deleteTask(id);
     }
 }
