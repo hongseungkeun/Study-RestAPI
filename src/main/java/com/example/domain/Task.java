@@ -1,5 +1,7 @@
 package com.example.domain;
 
+import lombok.Builder;
+
 public class Task {
     Long id;
     String title;
@@ -20,6 +22,7 @@ public class Task {
         this.title = title;
     }
 
+    @Builder(builderMethodName = "CreateNewTask")
     public Task(Long id, String title) {
         this.id = id;
         this.title = title;
