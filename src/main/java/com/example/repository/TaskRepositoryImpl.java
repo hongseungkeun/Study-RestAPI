@@ -29,7 +29,7 @@ public class TaskRepositoryImpl implements TaskRepository{
 
     @Override
     public Task createTask(Task task) {
-        Task newTask = new Task(Generated.incrementId(),task.getTitle());
+        Task newTask = Task.CreateNewTask().id(Generated.incrementId()).title(task.getTitle()).build();
         tasks.put(newTask.getId(), newTask);
         return newTask;
     }
