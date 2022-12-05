@@ -5,8 +5,8 @@ import lombok.EqualsAndHashCode;
 
 @EqualsAndHashCode
 public class Task {
-    Long id;
-    String title;
+    private Long id;
+    private String title;
 
     public Long getId() {
         return id;
