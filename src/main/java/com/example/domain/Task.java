@@ -1,7 +1,9 @@
 package com.example.domain;
 
 import lombok.Builder;
+import lombok.EqualsAndHashCode;
 
+@EqualsAndHashCode
 public class Task {
     Long id;
     String title;
