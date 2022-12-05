@@ -20,10 +20,6 @@ public class Task {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
     @Builder(builderMethodName = "CreateNewTask")
     public Task(Long id, String title) {
         this.id = id;
