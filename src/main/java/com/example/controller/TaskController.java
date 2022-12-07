@@ -3,7 +3,6 @@ package com.example.controller;
 import com.example.domain.Task;
 import com.example.service.TaskService;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
