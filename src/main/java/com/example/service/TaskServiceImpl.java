@@ -2,8 +2,6 @@ package com.example.service;
 
 import com.example.domain.Task;
 import com.example.repository.TaskRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
@@ -12,7 +10,6 @@ public class TaskServiceImpl implements TaskService{
 
     private final TaskRepository taskRepository;
 
-    @Autowired
     public TaskServiceImpl(TaskRepository taskRepository){
         this.taskRepository = taskRepository;
     }
@@ -23,7 +20,7 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Override
-    public ResponseEntity<Task> readTask(Long id) {
+    public Task readTask(Long id) {
         return taskRepository.readTask(id);
     }
 
@@ -33,12 +30,12 @@ public class TaskServiceImpl implements TaskService{
     }
 
     @Override
-    public ResponseEntity<Task> updateTask(Long id, Task task) {
+    public Task updateTask(Long id, Task task) {
         return taskRepository.updateTask(id, task);
     }
 
     @Override
-    public ResponseEntity<Task> deleteTask(Long id) {
+    public Task deleteTask(Long id) {
         return taskRepository.deleteTask(id);
     }
 }
